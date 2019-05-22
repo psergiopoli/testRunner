@@ -1,10 +1,14 @@
 import { TestRunner } from "./TestRunner";
 
+
 process.argv.forEach((val, index) => {
     console.log(index + ': ' + val);
 });
 
-const testRunner: TestRunner = new TestRunner('http://localhost:8080/hello/all', 10, 500, 'GET', {}, {});
+const url = 'http://localhost:8080/hello';
+// const url = 'http://localhost:3000';
+
+const testRunner: TestRunner = new TestRunner(url, 10, 1000, 'GET', {}, {});
 
 const hrStart = process.hrtime();
 
